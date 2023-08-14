@@ -3,15 +3,16 @@ import { Typography } from '@mui/material';
 
 // project imports
 import MainCard from 'ui-component/cards/MainCard';
+import ContactListTable from './ContactListTable';
 
 // ==============================|| SAMPLE PAGE ||============================== //
 
 const ContactList = () => (
-    <MainCard title="Sample Card">
-        <Typography variant="body2">
-            A B
-        </Typography>
-    </MainCard>
+  <MainCard title="Contact List">
+    <Typography variant="body2">
+      <ContactListTable />
+    </Typography>
+  </MainCard>
 );
 
 export default ContactList;
