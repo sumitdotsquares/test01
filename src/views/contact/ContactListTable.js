@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import 'jquery/dist/jquery.min.js';
 //Datatable Modules
 import 'datatables.net-dt/js/dataTables.dataTables';
+// import 'datatables.net-buttons-dt/js/buttons.dataTables';
 import 'datatables.net-dt/css/jquery.dataTables.min.css';
 import $ from 'jquery';
 import ContatDummyList from './ContatDummyList';
@@ -25,14 +26,14 @@ export default function ContactListTable() {
     console.log(ContatDummyList.users);
     setcoviddata(ContatDummyList.users);
     $(document).ready(function () {
-      $('#table_id').DataTable();
+      setTimeout(() => $('#table_id').DataTable(), 100)
     });
   }, [coviddata]);
 
   const tabledata = coviddata.map((obj) => {
     return (
       <tr key={obj.id}>
-        <td><img src={obj.image} alt='this is testing' style={{width:50}}/></td>
+        <td><img src={obj.image} alt='this is testing' style={{ width: 50 }} /></td>
         <td>{obj.firstName}</td>
         <td>{obj.lastName}</td>
         <td>{obj.email}</td>
@@ -43,7 +44,7 @@ export default function ContactListTable() {
 
   return (
     <div>
-      
+
       <div className="row justify-content-center">
         <div className="col-md-10">
           <table id="table_id" className=" table table p-3 mb-2 bg-success bg-gradient">

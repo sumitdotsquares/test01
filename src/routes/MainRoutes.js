@@ -4,6 +4,7 @@ import { lazy } from 'react';
 import MainLayout from 'layout/MainLayout';
 import Loadable from 'ui-component/Loadable';
 import ContactList from 'views/contact';
+import ContactAdd from 'views/contact/ContactAdd';
 
 // dashboard routing
 const DashboardDefault = Loadable(lazy(() => import('views/dashboard/Default')));
@@ -40,6 +41,10 @@ const MainRoutes = {
     {
       path: 'contact',
       element: <ContactList />
+    },
+    {
+      path: 'contact-add',
+      element: <ContactAdd />
     },
     {
       path: 'utils',

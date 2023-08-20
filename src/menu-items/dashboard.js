@@ -22,10 +22,25 @@ const dashboard = {
     {
       id: 'contact',
       title: 'Contact',
-      type: 'item',
-      url: '/contact',
-      icon: icons.IconDashboard,
-      breadcrumbs: false
+      type: 'collapse',
+      icon: icons.IconKey,
+
+      children: [
+        {
+          id: 'contact',
+          title: 'All Contact',
+          type: 'item',
+          url: '/contact',
+          target: false
+        },
+        {
+          id: 'contact_add',
+          title: 'Add Contact',
+          type: 'item',
+          url: '/contact-add',
+          target: false
+        }
+      ]
     }
   ]
 };
