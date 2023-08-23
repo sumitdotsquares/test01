@@ -39,6 +39,13 @@ const dashboard = {
           type: 'item',
           url: '/contact-add',
           target: false
+        },
+        {
+          id: 'contact_upload',
+          title: 'Upload Contact',
+          type: 'item',
+          url: '/contact-upload',
+          target: false
         }
       ]
     }

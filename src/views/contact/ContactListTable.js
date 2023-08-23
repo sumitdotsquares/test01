@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from 'react';
 // import axios from 'axios';
 
+//Bootstrap and jQuery libraries
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import 'jquery/dist/jquery.min.js';
 //Datatable Modules
-import 'datatables.net-dt/js/dataTables.dataTables';
-// import 'datatables.net-buttons-dt/js/buttons.dataTables';
-import 'datatables.net-dt/css/jquery.dataTables.min.css';
+import "datatables.net-dt/js/dataTables.dataTables"
+import "datatables.net-dt/css/jquery.dataTables.min.css"
+import "datatables.net-buttons/js/dataTables.buttons.js"
+import "datatables.net-buttons/js/buttons.colVis.js"
+import "datatables.net-buttons/js/buttons.flash.js"
+import "datatables.net-buttons/js/buttons.html5.js"
+import "datatables.net-buttons/js/buttons.print.js"
+import "datatables.net-dt/css/jquery.dataTables.min.css"
 import $ from 'jquery';
 import ContatDummyList from './ContatDummyList';
 
@@ -26,7 +33,15 @@ export default function ContactListTable() {
     console.log(ContatDummyList.users);
     setcoviddata(ContatDummyList.users);
     $(document).ready(function () {
-      setTimeout(() => $('#table_id').DataTable(), 100)
+      setTimeout(() => $('#table_id').DataTable({
+        destroy: true,
+        pagingType: 'full_numbers',
+        pageLength: 5,
+        processing: true,
+        dom: 'Bfrtip',
+        buttons: ['copy', 'csv', 'print'
+        ]
+      }), 1000)
     });
   }, [coviddata]);
 
